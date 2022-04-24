@@ -12,8 +12,7 @@ public class Main {
             }
 
             String a = text.replaceAll("\\//.+", "");
-            String b = a.replaceAll("/\\*(\r\n.+)*\\*/", "");
-            String c = b.replaceAll("\\/\\*([\\S\\s]+)\\*\\/", "");
+            String c = a.replaceAll("/\\*(?s).*?\\*/", "");
 
             FileWriter fileWriter = new FileWriter("output.txt");
             fileWriter.write(c);
